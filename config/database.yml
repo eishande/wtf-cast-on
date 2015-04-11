@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: wtf_cast_on_sinatra_development
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: wtf_cast_on_sinatra_test

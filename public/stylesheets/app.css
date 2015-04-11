@@ -1,0 +1,55 @@
+body {
+  background-image: -webkit-linear-gradient(left, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
+  background-image: -o-linear-gradient(left, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
+  background-image: linear-gradient(to right, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
+  height: 100%; }
+
+.top-bar {
+  background-color: #0AABBA;
+  font-color: #FFF; }
+
+.wrapper {
+  background-image: -webkit-linear-gradient(bottom, rgba(245, 185, 100, 0.1), rgba(0, 128, 0, 0.4));
+  background-image: -o-linear-gradient(bottom, rgba(245, 185, 100, 0.1), rgba(0, 128, 0, 0.4));
+  background-image: linear-gradient(to top, rgba(245, 185, 100, 0.1), rgba(0, 128, 0, 0.4));
+  height: 100%; }
+
+.content {
+  background-color: #EFEECC;
+  height: 100%; }
+
+.title {
+  margin-top: 2em;
+  text-align: center;
+  font-family: "Economica", serif; }
+
+button, .button {
+  background-color: #400403;
+  font-family: "Droid Sans", sans-serif;
+  transition: #EFEECC 300ms ease-out;
+  display: block;
+  margin: 2em auto; }
+  button:hover, .button:hover {
+    background-color: #FE0557; }
+  button.radius, .button.radius {
+    border-radius: 1em; }
+
+img.project_photo {
+  display: block;
+  margin: 2em auto;
+  max-height: 300px;
+  box-shadow: 10px 10px 15px 5px #222;
+  transition: 1s ease; }
+  img.project_photo:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease; }
+
+.project_name {
+  text-align: center;
+  font-family: "Economica", serif;
+  font-size: 2em;
+  font-color: #FE8B05; }
+
+/*# sourceMappingURL=app.css.map */
