@@ -1,3 +1,6 @@
+html {
+  height: 100%; }
+
 body {
   background-image: -webkit-linear-gradient(left, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
   background-image: -o-linear-gradient(left, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
@@ -6,7 +9,8 @@ body {
 
 .top-bar {
   background-color: #0AABBA;
-  font-color: #FFF; }
+  font-color: #FE8B05;
+  font-family: "Droid Sans", sans-serif; }
 
 .wrapper {
   background-image: -webkit-linear-gradient(bottom, rgba(245, 185, 100, 0.1), rgba(0, 128, 0, 0.4));
@@ -16,7 +20,9 @@ body {
 
 .content {
   background-color: #EFEECC;
-  height: 100%; }
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0; }
 
 .title {
   margin-top: 2em;
@@ -34,19 +40,19 @@ button, .button {
   button.radius, .button.radius {
     border-radius: 1em; }
 
-img.project_photo {
+img.project-photo {
   display: block;
   margin: 2em auto;
   max-height: 300px;
   box-shadow: 10px 10px 15px 5px #222;
   transition: 1s ease; }
-  img.project_photo:hover {
+  img.project-photo:hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease; }
 
-.project_name {
+.project-name {
   text-align: center;
   font-family: "Economica", serif;
   font-size: 2em;

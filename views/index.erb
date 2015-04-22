@@ -1,46 +1,29 @@
-<div class = "wrapper">
-  <div class = "content small-12 medium-9 columns small-centered">
-    <div class = "row">
-      <div class= "small-8 columns small-centered">
-        <h2 class= "title">
-          WHAT THE FUCK SHOULD I CAST ON?
-        </h2>
-      </div>
-    </div>
+<div class = "row">
+  <div class= "small-8 columns small-centered">
+    <h2 class= "title">
+      WHAT THE FUCK SHOULD I CAST ON?
+    </h2>
+  </div>
+</div>
 
-    <div class= "row">
-      <div class= "small-6 columns small-centered">
-        <a href = "http://www.ravelry.com/patterns/library/<%= @project.pattern_id %>">
-          <img class = "project_photo" src= "<%= @project.photo %>" >
-        </a>
-      </div>
-    </div>
+<div class= "row">
+  <div class= "small-6 columns small-centered">
+    <a href = "http://www.ravelry.com/patterns/library/<%= @project.pattern_id %>">
+      <img class = "project-photo" src= "<%= @project.photo %>" >
+    </a>
+  </div>
+</div>
 
-    <div class= "row">
-      <div class= "small-6 columns small-centered">
-        <p class="project_name">
-        <a href = "http://www.ravelry.com/patterns/library/<%= @project.pattern_id %>"><%= @project.name %></a>
-        </p>
-      </div>
-    </div>
+<div class= "row">
+  <div class= "small-6 columns small-centered">
+    <p class="project-name">
+      <a href = "http://www.ravelry.com/patterns/library/<%= @project.pattern_id %>"><%= @project.name %></a>
+    </p>
+  </div>
+</div>
 
-    <div class= "row">
-      <div class= "small-6 columns small-centered">
-        <a href="/" class="button radius">I don't want to fucking make that right now</a>
-      </div>
-    </div>
-
-    <div class= "row">
-      <div class= "small-6 columns small-centered">
-        <a href="/projects/<%= @project.id %>" class="button radius">Show me my fucking stash</a>
-      </div>
-    </div>
-
-    <div class= "pattern_photos">
-      <% 3.times do |i| %>
-        <img src="<%= @photos[i+1] %>">
-      <% end %>
-    </div>
-
+<div class= "row">
+  <div class= "small-6 columns small-centered">
+    <a href="/main" class="button radius">I don't want to fucking make that right now</a>
   </div>
 </div>

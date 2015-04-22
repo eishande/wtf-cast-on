@@ -6,12 +6,23 @@
     <title>What the Fuck Should I Cast On?</title>
     <link rel="stylesheet" href="/stylesheets/normalize.css" />
     <link rel="stylesheet" href="/stylesheets/foundation.min.css" />
-    <link rel="stylesheet" href="/stylesheets/app.css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans|Economica" />
+    <link rel="stylesheet" href="/stylesheets/app.css" />
   </head>
-  <body>
-    <%= yield %>
 
-    <script src="/javascripts/app.js"></script>
+  <body>
+    <div class = "wrapper">
+      <div class = "content small-12 medium-9 columns small-centered">
+        <div class = "top-bar">
+          <div class = "small-3 columns right">
+            <% if current_user %>
+              <p>Logged in as <%= current_user.username %>
+              <a href = "/sign_out">Log out</a></p>
+            <% end %>
+          </div>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
