@@ -8,6 +8,10 @@ $page-bg-color: #EFEECC;
 $sans-serif-font: 'Droid Sans', sans-serif;
 $title-font: 'Economica', serif;
 
+html {
+  height: 100%;
+}
+
 body {
   background-image: -webkit-linear-gradient(left, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
   background-image: -o-linear-gradient(left, rgba(255, 139, 5, 0.8), rgba(245, 205, 45, 0.8));
@@ -18,8 +22,14 @@ body {
 .top-bar {
   background-color: $top-bar-color;
   font: {
-    color: #FFF;
+    color: $caption-color;
+    family: $sans-serif-font;
   }
+  a {
+    color: #4D1E75;
+    padding-left: 2em;
+  }
+  padding: 0.5em;
 }
 
 .wrapper {
@@ -32,6 +42,8 @@ body {
 .content {
   background-color: $page-bg-color;
   height: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .title {
@@ -55,7 +67,7 @@ button, .button {
   }
 }
 
-img.project_photo {
+img.project-photo {
   display: block;
   margin: 2em auto;
   max-height: 300px;
@@ -69,11 +81,13 @@ img.project_photo {
   }
 }
 
-.project_name {
+.project-name {
   text-align: center;
   font: {
     family: $title-font;
     size: 2em;
+  }
+  a {
     color: $caption-color;
   }
 }
