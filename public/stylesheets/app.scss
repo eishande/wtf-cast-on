@@ -25,6 +25,11 @@ body {
     color: $caption-color;
     family: $sans-serif-font;
   }
+  a {
+    color: #4D1E75;
+    padding-left: 2em;
+  }
+  padding: 0.5em;
 }
 
 .wrapper {
@@ -81,6 +86,8 @@ img.project-photo {
   font: {
     family: $title-font;
     size: 2em;
+  }
+  a {
     color: $caption-color;
   }
 }

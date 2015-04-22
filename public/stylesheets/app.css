@@ -10,7 +10,11 @@ body {
 .top-bar {
   background-color: #0AABBA;
   font-color: #FE8B05;
-  font-family: "Droid Sans", sans-serif; }
+  font-family: "Droid Sans", sans-serif;
+  padding: 0.5em; }
+  .top-bar a {
+    color: #4D1E75;
+    padding-left: 2em; }
 
 .wrapper {
   background-image: -webkit-linear-gradient(bottom, rgba(245, 185, 100, 0.1), rgba(0, 128, 0, 0.4));
@@ -55,7 +59,8 @@ img.project-photo {
 .project-name {
   text-align: center;
   font-family: "Economica", serif;
-  font-size: 2em;
-  font-color: #FE8B05; }
+  font-size: 2em; }
+  .project-name a {
+    color: #FE8B05; }
 
 /*# sourceMappingURL=app.css.map */

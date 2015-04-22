@@ -36,7 +36,7 @@ helpers do
 end
 
 def build_queue(username)
-  queue = JSON.parse(session[:access_token].get("https://api.ravelry.com/people/#{username}/queue/list.json").response.body)
+  queue = JSON.parse(access_token.get("https://api.ravelry.com/people/#{username}/queue/list.json").response.body)
 
   queue["queued_projects"].each do |project|
     new_project = Project.new
@@ -47,6 +47,10 @@ def build_queue(username)
     new_project.queued_id = project["id"]
     new_project.save
   end
+end
+
+def access_token
+  session[:request_token].get_access_token(oauth_verifier: session[:oauth_verifier])
 end
 
 get "/sign_out" do
@@ -63,36 +67,28 @@ get "/sign_in" do
 end
 
 get "/oauth/callback" do
-  request_token = session[:request_token]
-  session[:access_token] = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
+  session[:oauth_verifier] = params[:oauth_verifier]
   session[:username] = params[:username]
   User.find_or_create_from_oauth(session[:username])
-  redirect '/main'
+  redirect '/'
 end
 
 get '/' do
-  user = User.find_by(username: session[:username])
+  if current_user
+    if (user_signed_in? && !Project.where(:user_id == current_user.id).any?)
+      build_queue(current_user.username)
+    end
 
-  if (user_signed_in? && !Project.where(:user_id == current_user.id).any?)
-    build_queue(user.username)
+    @project = Project.where(:user_id == current_user.id).order("RANDOM()").first
+    pattern = JSON.parse(access_token
+                        .get("https://api.ravelry.com/patterns/#{@project.pattern_id}.json").response.body)
+
+    @photos = []
+    pattern["pattern"]["photos"].each do |photo|
+      @photos << photo["medium_url"]
+    end
+    erb :index
+  else
+    erb :login
   end
-
-  erb :login
-end
-
-get '/main' do
-  if (user_signed_in? && !Project.where(:user_id == current_user.id).any?)
-    build_queue(current_user.username)
-  end
-
-  @project = Project.where(:user_id == current_user.id).order("RANDOM()").first
-  pattern = JSON.parse(session[:access_token]
-                      .get("https://api.ravelry.com/patterns/#{@project.pattern_id}.json").response.body)
-
-  @photos = []
-  pattern["pattern"]["photos"].each do |photo|
-    @photos << photo["medium_url"]
-  end
-
-  erb :index
 end
